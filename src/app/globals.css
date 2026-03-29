@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a1628;
+  --navy-light: #112240;
+  --gold: #c9a84c;
+  --gold-light: #e8c96a;
+  --white: #ffffff;
+  --gray: #f4f6f9;
+  --text-dark: #1a1a2e;
+  --text-muted: #6b7280;
+  --font-playfair: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-dm-sans), "DM Sans", sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-playfair), "Playfair Display", serif;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+/* Section spacing */
+section {
+  position: relative;
+}
+
+/* Image defaults */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Button resets */
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Input resets */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-gold {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(201, 168, 76, 0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.7s ease forwards;
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease forwards;
+}
+.animate-slideInLeft {
+  animation: slideInLeft 0.7s ease forwards;
+}
+
+/* Utility classes */
+.font-playfair {
+  font-family: var(--font-playfair), "Playfair Display", serif;
+}
+.text-gold {
+  color: var(--gold);
+}
+.text-navy {
+  color: var(--navy);
+}
+.bg-navy {
+  background-color: var(--navy);
+}
+.bg-gold {
+  background-color: var(--gold);
+}
+
+/* Page hero standard */
+.page-hero {
+  background-color: var(--navy);
+  padding: 6rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(201, 168, 76, 0.15) 0%,
+    transparent 60%
+  );
+}
+
+/* Gold underline for section headers */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin-top: 16px;
+}
+
+.section-title-center::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Gold button */
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.btn-gold:hover {
+  background: var(--navy);
+  color: white;
+}
+
+/* Navy button */
+.btn-navy {
+  background: var(--navy);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.btn-navy:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Outline button */
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}

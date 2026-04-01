@@ -20,104 +20,122 @@ const fees = [
 export default function FeesPage() {
   return (
     <div className="bg-white">
-
-      {/* Hero */}
       <div className="bg-[#0a1628] py-24 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,168,76,0.15),transparent_60%)]" />
+        <div className="absolute inset-0" style={{background: 'radial-gradient(circle at 50% 50%, rgba(201,168,76,0.15) 0%, transparent 60%)'}} />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
-            <Link href="/" className="hover:text-[#c9a84c]">Home</Link>
-            <span>/</span>
-            <Link href="/admissions" className="hover:text-[#c9a84c]">Admissions</Link>
-            <span>/</span>
+            <Link href="/" className="hover:text-[#c9a84c]">Home</Link><span>/</span>
+            <Link href="/admissions" className="hover:text-[#c9a84c]">Admissions</Link><span>/</span>
             <span className="text-[#c9a84c]">Tuition & Fees</span>
           </div>
           <h1 className="text-5xl font-bold text-white mb-4">Tuition & Fees</h1>
-          <p className="text-gray-300 text-xl max-w-2xl">
-            Transparent, affordable fees for world-class education. All amounts in UGX per semester.
-          </p>
+          <p className="text-gray-300 text-xl max-w-2xl">Transparent, affordable fees for world-class education. All amounts in UGX per semester.</p>
         </div>
       </div>
 
-      {/* Info Cards */}
-      <section className="py-20 px-6 bg-[#f4f6f9]">
+      <section className="py-24 px-6 bg-[#f4f6f9]">
         <div className="max-w-7xl mx-auto">
-
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {[
               { icon: '💰', title: 'Application Fee', amount: 'UGX 50,000', desc: 'One-time non-refundable fee paid when submitting your application.' },
-              { icon: '📅', title: 'Payment Plans', amount: 'Flexible', desc: 'Pay in installments — 50% at start, 50% mid-semester.' },
-              { icon: '🎓', title: 'Scholarships', amount: 'Available', desc: 'Merit-based and need-based scholarships available.' },
+              { icon: '📅', title: 'Payment Plans', amount: 'Flexible', desc: 'Pay in installments — 50% at semester start, 50% by mid-semester.' },
+              { icon: '🎓', title: 'Scholarships', amount: 'Available', desc: 'Merit-based and need-based scholarships available. Apply through admissions.' },
             ].map((item) => (
-              <div key={item.title} className="bg-white p-6 rounded-xl border">
-                <div className="text-3xl mb-3">{item.icon}</div>
-                <div className="text-lg font-bold text-[#c9a84c]">{item.amount}</div>
-                <h3 className="font-semibold text-[#0a1628]">{item.title}</h3>
-                <p className="text-gray-500 text-sm mt-1">{item.desc}</p>
+              <div key={item.title} className="bg-white rounded-2xl p-8 shadow-sm text-center">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="text-2xl font-bold text-[#c9a84c] mb-2">{item.amount}</div>
+                <h3 className="font-bold text-[#0a1628] text-lg mb-2">{item.title}</h3>
+                <p className="text-gray-500 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Table */}
-          <div className="bg-white rounded-xl border overflow-hidden">
-
+          <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
             <div className="bg-[#0a1628] px-6 py-4">
-              <h2 className="text-white font-bold text-lg">Fees Structure 2025/2026</h2>
-              <p className="text-gray-400 text-sm">All fees in UGX per semester</p>
+              <h2 className="text-white font-bold text-xl">Complete Fees Structure 2025/2026</h2>
+              <p className="text-gray-400 text-sm mt-1">All fees in Uganda Shillings (UGX) per semester</p>
             </div>
-
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead className="bg-[#f4f6f9] text-left">
-                  <tr>
-                    <th className="px-6 py-3 font-semibold">Programme</th>
-                    <th className="px-6 py-3 font-semibold">Level</th>
-                    <th className="px-6 py-3 font-semibold">Tuition</th>
-                    <th className="px-6 py-3 font-semibold">Functional</th>
-                    <th className="px-6 py-3 font-semibold text-[#c9a84c]">Total</th>
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-[#f4f6f9]">
+                    <th className="text-left px-6 py-4 text-sm font-bold text-[#0a1628] uppercase tracking-wide">Programme</th>
+                    <th className="text-left px-6 py-4 text-sm font-bold text-[#0a1628] uppercase tracking-wide">Level</th>
+                    <th className="text-left px-6 py-4 text-sm font-bold text-[#0a1628] uppercase tracking-wide">Tuition</th>
+                    <th className="text-left px-6 py-4 text-sm font-bold text-[#0a1628] uppercase tracking-wide">Functional</th>
+                    <th className="text-left px-6 py-4 text-sm font-bold text-[#c9a84c] uppercase tracking-wide">Total/Semester</th>
                   </tr>
                 </thead>
-
                 <tbody>
-                  {fees.map((fee, i) => (
-                    <tr key={fee.programme} className="border-t hover:bg-gray-50">
-                      <td className="px-6 py-4 font-medium">{fee.programme}</td>
+                  {fees.map((fee, index) => (
+                    <tr key={fee.programme} className={`border-b border-gray-100 hover:bg-[#f4f6f9] transition-colors ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
+                      <td className="px-6 py-4 font-medium text-[#0a1628]">{fee.programme}</td>
                       <td className="px-6 py-4">
-                        <span className={`text-xs px-2 py-1 rounded-full font-semibold ${
-                          fee.level === 'Undergraduate'
-                            ? 'bg-blue-100 text-blue-700'
-                            : 'bg-purple-100 text-purple-700'
-                        }`}>
+                        <span className={`text-xs font-bold px-2 py-1 rounded-full ${fee.level === 'Undergraduate' ? 'bg-blue-100 text-blue-700' : 'bg-purple-100 text-purple-700'}`}>
                           {fee.level}
                         </span>
                       </td>
-                      <td className="px-6 py-4 text-gray-600">UGX {fee.tuition}</td>
-                      <td className="px-6 py-4 text-gray-600">UGX {fee.functional}</td>
-                      <td className="px-6 py-4 font-bold">UGX {fee.total}</td>
+                      <td className="px-6 py-4 text-gray-600 text-sm">UGX {fee.tuition}</td>
+                      <td className="px-6 py-4 text-gray-600 text-sm">UGX {fee.functional}</td>
+                      <td className="px-6 py-4 font-bold text-[#0a1628]">UGX {fee.total}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
 
-            {/* Actions */}
-            <div className="flex flex-wrap justify-center gap-4 py-10">
-              <a
-                href="/ZGU_Fees_Structure_2025_2026.pdf"
-                download
-                className="inline-flex items-center gap-2 bg-[#0a1628] text-white px-8 py-3 rounded font-bold text-sm uppercase tracking-widest hover:bg-[#c9a84c] hover:text-[#0a1628] transition-all"
-              >
-                Download PDF
-              </a>
+  <a
+    href="/ZGU_Fees_Structure_2025_2026.pdf"
+    download
+    style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '8px',
+      background: '#0a1628',
+      color: 'white',
+      padding: '14px 32px',
+      borderRadius: '4px',
+      fontWeight: 700,
+      fontSize: '13px',
+      fontFamily: 'Inter, sans-serif',
+      textTransform: 'uppercase',
+      letterSpacing: '0.08em',
+      textDecoration: 'none',
+      transition: 'all 0.2s'
+    }}
+    className="hover:bg-[#c9a84c] hover:text-[#0a1628]"
+  >
+    <svg style={{ width: '16px', height: '16px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+      />
+    </svg>
+    Download Fees Structure PDF
+  </a>
 
-              <Link
-                href="/admissions/apply"
-                className="inline-flex items-center bg-[#c9a84c] text-[#0a1628] px-8 py-3 rounded font-bold text-sm uppercase tracking-widest hover:bg-[#0a1628] hover:text-white transition-all"
-              >
-                Apply Now
-              </Link>
-            </div>
+  <Link
+    href="/admissions/apply"
+    style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      background: '#c9a84c',
+      color: '#0a1628',
+      padding: '14px 32px',
+      borderRadius: '4px',
+      fontWeight: 700,
+      fontSize: '13px',
+      fontFamily: 'Inter, sans-serif',
+      textTransform: 'uppercase',
+      letterSpacing: '0.08em',
+      transition: 'all 0.2s'
+    }}
+    className="hover:bg-[#0a1628] hover:text-white"
+  >
+    Apply Now
+  </Link>
 
+</div>
           </div>
         </div>
       </section>

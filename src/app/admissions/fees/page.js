@@ -83,6 +83,42 @@ export default function FeesPage() {
                 </tbody>
               </table>
             </div>
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
+  
+    href="/ZGU_Fees_Structure_2025_2026.pdf"
+    download
+    style={{
+      display: 'inline-flex', alignItems: 'center', gap: '8px',
+      background: '#0a1628', color: 'white',
+      padding: '14px 32px', borderRadius: '4px',
+      fontWeight: 700, fontSize: '13px',
+      fontFamily: 'Inter, sans-serif',
+      textTransform: 'uppercase', letterSpacing: '0.08em',
+      textDecoration: 'none',
+      transition: 'all 0.2s'
+    }}
+    className="hover:bg-[#c9a84c] hover:text-[#0a1628]"
+  >
+    <svg style={{width: '16px', height: '16px'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    Download Fees Structure PDF
+  </a>
+  <Link href="/admissions/apply"
+    style={{
+      display: 'inline-flex', alignItems: 'center',
+      background: '#c9a84c', color: '#0a1628',
+      padding: '14px 32px', borderRadius: '4px',
+      fontWeight: 700, fontSize: '13px',
+      fontFamily: 'Inter, sans-serif',
+      textTransform: 'uppercase', letterSpacing: '0.08em',
+      transition: 'all 0.2s'
+    }}
+    className="hover:bg-[#0a1628] hover:text-white"
+  >
+    Apply Now
+  </Link>
+</div>
             <div className="p-6 bg-[#f4f6f9] text-sm text-gray-500">
               * Fees are subject to annual review. Scholarships and flexible payment plans available. Contact admissions@zenithglobal.ac.ug for details.
             </div>

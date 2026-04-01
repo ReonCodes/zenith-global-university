@@ -30,28 +30,45 @@ export default function Footer() {
         <div>
           <h4 className="text-[var(--gold)] font-bold text-xs uppercase tracking-[0.2em] mb-6">Quick Links</h4>
           <ul className="space-y-3">
-            {['About ZGU', 'Admissions', 'Programmes', 'Students', 'News & Events', 'Library', 'ZGU Shop'].map((link) => (
-              <li key={link}>
-                <Link href="#" className="text-gray-400 text-sm hover:text-[var(--gold)] transition-colors">
-                  {link}
-                </Link>
-              </li>
-            ))}
-          </ul>
+  {[
+    { label: 'About ZGU', href: '/about' },
+    { label: 'Admissions', href: '/admissions' },
+    { label: 'Undergraduate', href: '/admissions/undergraduate' },
+    { label: 'Postgraduate', href: '/admissions/postgraduate' },
+    { label: 'Students', href: '/students' },
+    { label: 'News & Events', href: '/news' },
+    { label: 'Library', href: '/library' },
+    { label: 'ZGU Shop', href: '/shop' },
+    { label: 'Contact Us', href: '/contact' },
+  ].map((link) => (
+    <li key={link.label}>
+      <Link href={link.href} className="text-gray-400 text-sm hover:text-[#c9a84c] transition-colors">
+        {link.label}
+      </Link>
+    </li>
+  ))}
+</ul>
         </div>
 
         {/* Faculties */}
         <div>
           <h4 className="text-[var(--gold)] font-bold text-xs uppercase tracking-[0.2em] mb-6">Faculties</h4>
           <ul className="space-y-3">
-            {['Technology & Computing', 'Law', 'Business & Management', 'Health Sciences', 'Education', 'Social Sciences'].map((faculty) => (
-              <li key={faculty}>
-                <Link href="#" className="text-gray-400 text-sm hover:text-[var(--gold)] transition-colors">
-                  {faculty}
-                </Link>
-              </li>
-            ))}
-          </ul>
+  {[
+    { label: 'Technology & Computing', href: '/admissions/undergraduate' },
+    { label: 'Law', href: '/admissions/undergraduate' },
+    { label: 'Business & Management', href: '/admissions/undergraduate' },
+    { label: 'Health Sciences', href: '/admissions/undergraduate' },
+    { label: 'Education', href: '/admissions/undergraduate' },
+    { label: 'Social Sciences', href: '/admissions/undergraduate' },
+  ].map((faculty) => (
+    <li key={faculty.label}>
+      <Link href={faculty.href} className="text-gray-400 text-sm hover:text-[#c9a84c] transition-colors">
+        {faculty.label}
+      </Link>
+    </li>
+  ))}
+</ul>
         </div>
 
         {/* Contact */}

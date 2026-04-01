@@ -64,23 +64,27 @@ const isBlurred = isHome && scrolled;
       </div>
 
       {/* Main Navbar */}
-      <nav className={`sticky top-0 z-50 w-full transition-all duration-500 ${
+     <nav className={`sticky top-0 z-50 w-full transition-all duration-500 ${
   isTransparent
     ? 'bg-transparent py-4'
-    : isBlurred
-    ? 'bg-[var(--navy)]/80 backdrop-blur-md shadow-2xl py-2'
-    : 'bg-[var(--navy)] shadow-2xl py-2'
+    : 'bg-[#0a1628] shadow-2xl py-2'
 }`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
          {/* Logo */}
 <Link href="/" className="flex items-center gap-3">
   <img
-    src="/logo.png"
-    alt="Zenith Global University"
-    className={`w-auto object-contain transition-all duration-300 ${isTransparent ? 'h-14' : 'h-10'}`}
-    style={{ filter: isTransparent ? 'brightness(0) invert(1)' : 'none' }}
-  />
+  src="/logo.png"
+  alt="Zenith Global University"
+  className={`w-auto object-contain transition-all duration-300 ${
+    isTransparent ? 'h-14' : 'h-10'
+  }`}
+  style={{
+    filter: isTransparent ? 'brightness(0) invert(1)' : 'none',
+    display: 'block',
+    minWidth: '40px'
+  }}
+/>
   <div>
     <div
       className="font-bold text-lg leading-none tracking-wide text-white"

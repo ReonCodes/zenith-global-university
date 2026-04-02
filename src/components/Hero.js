@@ -142,8 +142,8 @@ export default function Hero() {
             textTransform: 'uppercase', letterSpacing: '0.1em',
             transition: 'all 0.2s', display: 'inline-block',
           }}
-            onMouseEnter={e => { e.target.style.background = 'white'; }}
-            onMouseLeave={e => { e.target.style.background = '#c9a84c'; }}>
+          onMouseEnter={e => { e.target.style.background = 'white'; }}
+          onMouseLeave={e => { e.target.style.background = '#c9a84c'; }}>
             Apply Now →
           </Link>
           <Link href="/admissions/undergraduate" style={{
@@ -155,8 +155,8 @@ export default function Hero() {
             border: '1px solid rgba(255,255,255,0.4)',
             transition: 'all 0.2s', display: 'inline-block',
           }}
-            onMouseEnter={e => { e.target.style.borderColor = '#c9a84c'; e.target.style.color = '#c9a84c'; }}
-            onMouseLeave={e => { e.target.style.borderColor = 'rgba(255,255,255,0.4)'; e.target.style.color = 'white'; }}>
+          onMouseEnter={e => { e.target.style.borderColor = '#c9a84c'; e.target.style.color = '#c9a84c'; }}
+          onMouseLeave={e => { e.target.style.borderColor = 'rgba(255,255,255,0.4)'; e.target.style.color = 'white'; }}>
             Browse Programmes
           </Link>
         </div>

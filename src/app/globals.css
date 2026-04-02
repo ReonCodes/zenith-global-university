@@ -1,45 +1,23 @@
-@import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --navy: #0a1628;
-  --navy-light: #112240;
   --gold: #c9a84c;
-  --gold-light: #e8c96a;
   --gray: #f8f9fb;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
 body {
   font-family: 'Inter', sans-serif;
-  background: white;
-  color: #374151;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.7;
 }
 
 h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
-  color: #0a1628;
-  line-height: 1.2;
 }
-
-a { text-decoration: none; }
-img { display: block; max-width: 100%; }
-button { cursor: pointer; font-family: inherit; }
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 3px; }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}

@@ -123,7 +123,7 @@ export default function AIAssistant() {
           {/* Header */}
           <div style={{ background: '#0a1628', padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#c9a84c', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', color: '#0a1628', fontSize: '16px' }}>Z</div>
+              <img src="/reon.jpg" style={{width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover', objectPosition: 'top'}} />
               <div>
                 <div style={{ color: 'white', fontWeight: 'bold', fontSize: '14px' }}>ZGU Assistant</div>
                 <div style={{ color: '#4ade80', fontSize: '11px' }}>● Online — Ask me anything!</div>
@@ -153,7 +153,7 @@ export default function AIAssistant() {
             ))}
             {loading && (
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#c9a84c', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', color: '#0a1628', fontSize: '12px' }}>Z</div>
+                <img src="/reon.jpg" style={{width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover', objectPosition: 'top', marginRight: '8px', flexShrink: 0, alignSelf: 'flex-end'}} />
                 <div style={{ background: 'white', borderRadius: '16px', borderBottomLeftRadius: '4px', padding: '12px 16px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', display: 'flex', gap: '4px', alignItems: 'center' }}>
                   <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#c9a84c', animation: 'bounce 1s infinite 0ms' }} />
                   <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#c9a84c', animation: 'bounce 1s infinite 150ms' }} />

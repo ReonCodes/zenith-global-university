@@ -65,7 +65,8 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <nav style={{
-        background: isTransparent ? 'transparent' : '#0a1628',
+        background: isTransparent ? 'transparent' : 'rgba(10, 22, 40, 0.85)',
+backdropFilter: isTransparent ? 'none' : 'blur(12px)',
         backdropFilter: isTransparent ? 'none' : 'none',
         boxShadow: isTransparent ? 'none' : '0 2px 20px rgba(0,0,0,0.3)',
         position: 'sticky',
@@ -87,7 +88,7 @@ export default function Navbar() {
                 width: 'auto',
                 objectFit: 'contain',
                 transition: 'all 0.3s ease',
-                filter: 'brightness(0) invert(1)',
+                filter: isTransparent ? 'brightness(0) invert(1)' : 'none',
               }}
             />
             <div>

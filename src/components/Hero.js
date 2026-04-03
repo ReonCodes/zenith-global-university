@@ -51,7 +51,14 @@ export default function Hero() {
   const slide = slides[current];
 
   return (
-    <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', overflow: 'hidden' }}>
+    <section style={{
+      position: 'relative',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-end',
+      overflow: 'hidden',
+    }}>
 
       {/* Background Images */}
       {slides.map((s, i) => (
@@ -71,10 +78,21 @@ export default function Hero() {
       }} />
 
       {/* Gold bottom line */}
-      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(to right, #c9a84c, #e8c96a, transparent)', zIndex: 10 }} />
+      <div style={{
+        position: 'absolute', bottom: 0, left: 0, right: 0,
+        height: '3px',
+        background: 'linear-gradient(to right, #c9a84c, #e8c96a, transparent)',
+        zIndex: 10,
+      }} />
 
       {/* Content */}
-      <div style={{ position: 'relative', zIndex: 5, maxWidth: '1280px', margin: '0 auto', padding: '0 24px 80px', width: '100%', paddingTop: '120px' }}>
+      <div style={{
+        position: 'relative', zIndex: 5,
+        maxWidth: '1280px', margin: '0 auto',
+        padding: '0 24px 80px',
+        width: '100%',
+        paddingTop: '200px',
+      }}>
 
         {/* Tag */}
         <div style={{
@@ -142,8 +160,8 @@ export default function Hero() {
             textTransform: 'uppercase', letterSpacing: '0.1em',
             transition: 'all 0.2s', display: 'inline-block',
           }}
-          onMouseEnter={e => { e.target.style.background = 'white'; }}
-          onMouseLeave={e => { e.target.style.background = '#c9a84c'; }}>
+          onMouseEnter={e => { e.currentTarget.style.background = 'white'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = '#c9a84c'; }}>
             Apply Now →
           </Link>
           <Link href="/admissions/undergraduate" style={{
@@ -155,8 +173,8 @@ export default function Hero() {
             border: '1px solid rgba(255,255,255,0.4)',
             transition: 'all 0.2s', display: 'inline-block',
           }}
-          onMouseEnter={e => { e.target.style.borderColor = '#c9a84c'; e.target.style.color = '#c9a84c'; }}
-          onMouseLeave={e => { e.target.style.borderColor = 'rgba(255,255,255,0.4)'; e.target.style.color = 'white'; }}>
+          onMouseEnter={e => { e.currentTarget.style.borderColor = '#c9a84c'; e.currentTarget.style.color = '#c9a84c'; }}
+          onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)'; e.currentTarget.style.color = 'white'; }}>
             Browse Programmes
           </Link>
         </div>
@@ -168,7 +186,7 @@ export default function Hero() {
           opacity: loaded ? 1 : 0,
           transition: 'all 0.7s ease 0.6s',
         }}>
-          {stats.map((stat, i) => (
+          {stats.map((stat) => (
             <div key={stat.label} style={{
               borderLeft: '2px solid #c9a84c',
               paddingLeft: '16px',
@@ -181,7 +199,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Slide Controls */}
       {/* Prev Arrow */}
       <button
         onClick={() => setCurrent((current - 1 + slides.length) % slides.length)}

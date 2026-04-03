@@ -26,7 +26,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body>
         <Navbar />
-        <main>{children}</main>
+<main style={{ paddingTop: '0' }}>
+  {children}
+</main>
         <Footer />
         <AIAssistant />
       </body>

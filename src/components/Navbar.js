@@ -50,27 +50,35 @@ export default function Navbar() {
   return (
     <>
       {/* Top Bar */}
-      <div style={{background: '#0a1628'}} className="text-white text-xs py-2 px-6 hidden md:flex justify-between items-center">
-        <span style={{color: '#9ca3af', fontFamily: 'Inter, sans-serif'}}>
+      <div style={{
+        background: '#0a1628',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 60,
+      }} className="text-white text-xs py-2 px-6 hidden md:flex justify-between items-center">
+        <span style={{ color: '#9ca3af', fontFamily: 'Inter, sans-serif' }}>
           📍 Kampala, Uganda &nbsp;|&nbsp; ✉ info@zenithglobal.ac.ug &nbsp;|&nbsp; 📞 +256 700 000 000
         </span>
         <div className="flex gap-4">
-          <Link href="/portal" style={{color: '#9ca3af', fontFamily: 'Inter, sans-serif'}} className="hover:text-yellow-400 transition-colors text-xs">Student Portal</Link>
-          <span style={{color: '#374151'}}>|</span>
-          <Link href="/staff" style={{color: '#9ca3af', fontFamily: 'Inter, sans-serif'}} className="hover:text-yellow-400 transition-colors text-xs">Staff Portal</Link>
-          <span style={{color: '#374151'}}>|</span>
-          <Link href="/library" style={{color: '#9ca3af', fontFamily: 'Inter, sans-serif'}} className="hover:text-yellow-400 transition-colors text-xs">Library</Link>
+          <Link href="/portal" style={{ color: '#9ca3af', fontFamily: 'Inter, sans-serif' }} className="hover:text-yellow-400 transition-colors text-xs">Student Portal</Link>
+          <span style={{ color: '#374151' }}>|</span>
+          <Link href="/staff" style={{ color: '#9ca3af', fontFamily: 'Inter, sans-serif' }} className="hover:text-yellow-400 transition-colors text-xs">Staff Portal</Link>
+          <span style={{ color: '#374151' }}>|</span>
+          <Link href="/library" style={{ color: '#9ca3af', fontFamily: 'Inter, sans-serif' }} className="hover:text-yellow-400 transition-colors text-xs">Library</Link>
         </div>
       </div>
 
       {/* Main Navbar */}
       <nav style={{
-        background: isTransparent ? 'transparent' : 'rgba(10, 22, 40, 0.85)',
-backdropFilter: isTransparent ? 'none' : 'blur(12px)',
-        backdropFilter: isTransparent ? 'none' : 'none',
+        background: isTransparent ? 'transparent' : 'rgba(10, 22, 40, 0.92)',
+        backdropFilter: isTransparent ? 'none' : 'blur(12px)',
         boxShadow: isTransparent ? 'none' : '0 2px 20px rgba(0,0,0,0.3)',
-        position: 'sticky',
-        top: 0,
+        position: 'fixed',
+        top: scrolled ? '0' : '36px',
+        left: 0,
+        right: 0,
         zIndex: 50,
         width: '100%',
         transition: 'all 0.4s ease',
@@ -98,7 +106,7 @@ backdropFilter: isTransparent ? 'none' : 'blur(12px)',
                 fontWeight: 700,
                 fontSize: '18px',
                 lineHeight: 1,
-                letterSpacing: '0.05em'
+                letterSpacing: '0.05em',
               }}>ZENITH</div>
               <div style={{
                 color: '#c9a84c',
@@ -106,7 +114,7 @@ backdropFilter: isTransparent ? 'none' : 'blur(12px)',
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 fontFamily: 'Inter, sans-serif',
-                fontWeight: 500
+                fontWeight: 500,
               }}>Global University</div>
             </div>
           </Link>
@@ -135,7 +143,7 @@ backdropFilter: isTransparent ? 'none' : 'blur(12px)',
                 className="hover:text-yellow-400">
                   {link.label}
                   {link.children && (
-                    <svg style={{width: '12px', height: '12px', marginTop: '2px', transition: 'transform 0.2s', transform: activeDropdown === link.label ? 'rotate(180deg)' : 'rotate(0deg)'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg style={{ width: '12px', height: '12px', marginTop: '2px', transition: 'transform 0.2s', transform: activeDropdown === link.label ? 'rotate(180deg)' : 'rotate(0deg)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   )}
@@ -196,28 +204,28 @@ backdropFilter: isTransparent ? 'none' : 'blur(12px)',
 
           {/* Mobile Menu Button */}
           <button className="lg:hidden text-white p-2" onClick={() => setMobileOpen(!mobileOpen)}>
-            <div style={{width: '24px', height: '2px', background: 'white', marginBottom: '5px', transition: 'all 0.3s', transform: mobileOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'}} />
-            <div style={{width: '24px', height: '2px', background: 'white', marginBottom: '5px', transition: 'all 0.3s', opacity: mobileOpen ? 0 : 1}} />
-            <div style={{width: '24px', height: '2px', background: 'white', transition: 'all 0.3s', transform: mobileOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none'}} />
+            <div style={{ width: '24px', height: '2px', background: 'white', marginBottom: '5px', transition: 'all 0.3s', transform: mobileOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+            <div style={{ width: '24px', height: '2px', background: 'white', marginBottom: '5px', transition: 'all 0.3s', opacity: mobileOpen ? 0 : 1 }} />
+            <div style={{ width: '24px', height: '2px', background: 'white', transition: 'all 0.3s', transform: mobileOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div style={{background: '#112240', padding: '16px 24px', borderTop: '1px solid rgba(255,255,255,0.1)'}}>
+          <div style={{ background: '#112240', padding: '16px 24px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
             {navLinks.map((link) => (
               <div key={link.label}>
                 <Link href={link.href}
-                  style={{display: 'block', padding: '12px 0', color: 'white', fontFamily: 'Inter, sans-serif', fontSize: '14px', borderBottom: '1px solid rgba(255,255,255,0.08)'}}
+                  style={{ display: 'block', padding: '12px 0', color: 'white', fontFamily: 'Inter, sans-serif', fontSize: '14px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}
                   className="hover:text-yellow-400"
                   onClick={() => setMobileOpen(false)}>
                   {link.label}
                 </Link>
                 {link.children && (
-                  <div style={{paddingLeft: '16px'}}>
+                  <div style={{ paddingLeft: '16px' }}>
                     {link.children.map((child) => (
                       <Link key={child.label} href={child.href}
-                        style={{display: 'block', padding: '8px 0', color: '#9ca3af', fontSize: '13px', fontFamily: 'Inter, sans-serif'}}
+                        style={{ display: 'block', padding: '8px 0', color: '#9ca3af', fontSize: '13px', fontFamily: 'Inter, sans-serif' }}
                         className="hover:text-yellow-400"
                         onClick={() => setMobileOpen(false)}>
                         {child.label}
@@ -228,7 +236,7 @@ backdropFilter: isTransparent ? 'none' : 'blur(12px)',
               </div>
             ))}
             <Link href="/admissions/apply"
-              style={{display: 'block', marginTop: '16px', textAlign: 'center', background: '#c9a84c', color: '#0a1628', padding: '12px', borderRadius: '4px', fontWeight: 700, fontSize: '13px', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase', letterSpacing: '0.08em'}}
+              style={{ display: 'block', marginTop: '16px', textAlign: 'center', background: '#c9a84c', color: '#0a1628', padding: '12px', borderRadius: '4px', fontWeight: 700, fontSize: '13px', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase', letterSpacing: '0.08em' }}
               onClick={() => setMobileOpen(false)}>
               Apply Now
             </Link>

@@ -96,7 +96,8 @@ export default function Navbar() {
                 width: 'auto',
                 objectFit: 'contain',
                 transition: 'all 0.3s ease',
-                filter: isTransparent ? 'brightness(0) invert(1)' : 'none',
+                filter: 'none',
+mixBlendMode: 'screen',
               }}
             />
             <div>

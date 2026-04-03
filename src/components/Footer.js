@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="lg:col-span-1">
           <div className="flex items-center gap-3 mb-5">
-            <img src="/logo.png" alt="ZGU" style={{height: '44px', width: 'auto', filter: 'brightness(0) invert(1)'}} />
+            <img src="/logo.png" alt="ZGU" style={{height: '44px', width: 'auto', mixBlendMode: 'screen'}} />
             <div>
               <div style={{fontFamily: 'Playfair Display, serif', fontWeight: 700, fontSize: '18px', color: 'white', letterSpacing: '0.05em'}}>ZENITH</div>
               <div style={{color: '#c9a84c', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', fontFamily: 'Inter, sans-serif'}}>Global University</div>
